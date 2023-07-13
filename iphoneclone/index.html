@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       ::-webkit-scrollbar{
+        display: none;
+       }
+
+
+.touch_btn{
+    width: 45px;
+    height: 30px;
+    background-color: rgb(41, 39, 39);
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+    border-radius: 50%;
+    border: 3px solid rgb(68, 68, 68);
+    position: absolute;
+    bottom: -2.7rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-shadow: inset rgb(173, 173, 173) 1px -1px  5px; 
+}
+.camera{
+    width: 15px;
+    height: 8px;
+    border-radius: 50%;
+    position: absolute;
+    top: -1.7rem;
+    left: 6.7rem;
+    border: 1px solid rgb(82, 82, 82);
+    box-shadow: inset grey -2px 3px 4px -2px;
+}
+.camera::before{
+    content: "";
+    width: 5px;
+    height: 3px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0.15rem;
+    background-color: rgba(86, 86, 136, 0.808);
+    left: 0.2rem;
+    border: 1px solid rgb(82, 82, 82);
+    box-shadow: inset grey -2px 3px 4px -2px;
+}
+.top_mike{
+    width: 60px;
+    height: 5px;
+    border: 1px solid rgb(82, 82, 82);
+    box-shadow: inset grey -2px 3px 4px -2px;
+    position: absolute; 
+    top: -1.5rem;
+    border-radius: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+.power_btn{
+    width: 8px;
+    height: 50px;
+    border: 1px solid;
+    position: absolute;
+  left:-2rem;
+  top: 3rem;
+  border-radius: 6px;
+  border-right: 3px solid rgb(39, 28, 28);
+  border-top: 2px solid;
+
+  border-bottom:0px solid;
+  background-color: rgb(223, 223, 223);
+  box-shadow: inset rgb(70, 70, 70) -1px 1px 3px 1px;
+  opacity: 0.5;
+}
+
+.bubble_1_{
+    width: 50px;
+    height: 35px;
+    border: 0.2px solid rgba(255, 255, 255, 0.359);
+    box-shadow: inset rgba(255, 255, 255, 0.368) 3px 3px 10px 2px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.5;
+   
+}
+@keyframes moveing{
+    0%{
+        transform: translateY(0rem)rotate(-360deg)translateX(-1rem);
+    }
+    50%{
+        transform: translateY(10rem)rotate(360deg);
+        opacity: 1;
+    }
+}
+@keyframes moveingsec{
+    0%{
+        transform: translateY(0rem)rotate(-360deg)translateX(-1rem);
+    }
+    50%{
+        transform: translateY(10rem)rotate(360deg)translateX(3rem);
+        opacity: 0
+    }
+}
+@keyframes moveingbtm{
+    0%{
+        transform: translateY(0rem)rotate(-360deg)translateX(-1rem);
+    }
+    50%{
+        transform: translateY(-10rem)rotate(360deg)translateX(3rem);
+        opacity: 0
+    }
+}
+.second{
+    left: 5rem; 
+    animation-delay: 1s; 
+    animation:  moveingsec 30s linear infinite;
+}
+
+.five{
+    left: 10rem;
+    top: 5rem; 
+    animation-delay: 1.5s; 
+    animation:  moveing 30s linear infinite;
+}
+.six{
+    left: 10rem;
+    bottom: 0rem; 
+    animation-delay: 1.5s; 
+    animation:  moveingbtm 30s linear infinite; 
+}
+.charger{
+    width: 18px;
+    height: 10px;
+    border: 1px solid ;
+    position: absolute;
+    bottom: -4.3rem;
+    left: 2rem;
+    border-radius: 50%;
+    transform: rotateX(60deg);
+    background-color: black;
+    box-shadow: inset grey 1px -2px 5px;
+}
+.charger::before{
+    content: "";
+    width: 6px;
+    height: 10px;
+    border: 1px solid ;
+    position: absolute;
+    bottom: -0.2rem;
+    left: 1.6rem;
+    border-radius: 50%;
+    transform: rotateX(60deg);
+    background-color: black;
+    box-shadow: inset rgb(52, 51, 51) 1px -2px 5px;
+}
+.btm_mike{
+    width: 60px;
+    height: 10px;
+border-radius: 5px;
+/* border: 0.5px solid; */
+    position: absolute;
+    bottom: -4.3rem;
+    transform: rotateX(120deg);
+    background-color: rgb(6, 6, 6);
+    box-shadow: inset rgb(166, 164, 164) 1px 2px 5px 2px ;
+    left: 0;
+    right: 0;
+    margin: auto;
+}.small_hole{
+    width: 6px;
+    height: 11px;
+    border: 1px solid ;
+    position: absolute;
+    bottom: -4.3rem;
+    right: 2.5rem;
+    border-radius: 50%;
+    transform: rotateX(80deg);
+    background-color: black;
+    box-shadow: inset rgb(52, 51, 51) 1px -2px 5px;
+}
+.small_hole::before{
+    content: "";
+    width: 6px;
+    height: 11px;
+    border: 1px solid ;
+    position: absolute;
+    bottom: 0rem;
+    right: 0.7rem;
+    border-radius: 50%;
+    /* transform: rotateX(80deg); */
+    background-color: black;
+    box-shadow: inset rgb(52, 51, 51) 1px -2px 5px;
+}
+.small_hole::after{
+    content: "";
+    width: 6px;
+    height: 11px;
+    border: 1px solid ;
+    position: absolute;
+    bottom: 0rem;
+    right: 1.5rem;
+    border-radius: 50%;
+    /* transform: rotateX(80deg); */
+    background-color: black;
+    box-shadow: inset rgb(52, 51, 51) 1px -2px 5px;
+}
+.time{
+    width: 100px;
+    height: 10px;
+    position: absolute;
+   
+    right: -2rem;
+    margin: auto;
+top: -2rem;
+}
+h1{
+    font-size:0.5rem;
+    font-weight: 100;
+    position: absolute;
+    font-family: sans-serif;
+    top: 2.3rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: rgba(255, 255, 255, 0.576);
+}
+
+
+.top_bar{
+    width: 100%;
+    height: 20px;
+    /* border: 2px solid; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.tower_box{
+    /* align-items: center; */
+text-align: center;
+display: flex;
+width: 40px;
+height: 15px;
+/* border: 1px solid; */
+justify-content: center;
+position: relative;
+}
+.tower_1{
+    width: 4px;
+    height: 7px;
+    background-color: rgb(77, 76, 76);
+    position: absolute;
+    bottom: 0;
+}
+.tower_2{
+    width: 4px;
+    height: 10px;
+    margin-left:12px;
+    background-color: rgb(77, 76, 76);
+    position: absolute;
+    bottom: 0; 
+}
+.tower_3{
+    width: 4px;
+    height: 13px;
+    margin-left:25px;
+    background-color: rgb(77, 76, 76);
+    position: absolute;
+    bottom: 0;   
+}
+.tower_{
+    width: 4px;
+    height: 4px;
+    margin-left:-10px;
+    background-color: rgb(77, 76, 76);
+    position: absolute;
+    bottom: 0; 
+}
+.charger_box{
+    width: 40px;
+    height: 20px;
+    /* border: 1px solid; */
+    align-items: center;
+    position: relative;
+}
+.charger_1{
+    width: 3px;
+    height: 4px;
+    border: 1px solid rgb(90, 87, 87);
+    position: absolute;
+    top: 0.37rem;
+    left: 0.26rem;
+    border-radius: 3px 0px 0px 3px;
+}
+.charger_2{
+    width: 6px;
+    height: 8px;
+    border: 1px solid rgb(90, 87, 87);
+    border-radius: 3px 0px 0px 3px;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.5rem;
+}
+.charger_3{
+    width: 6px;
+    height: 8px;
+    border: 1px solid rgb(90, 87, 87);
+    position: absolute;
+    top: 0.25rem;
+    left: 1rem;
+}
+.charger_4{
+    width: 6px;
+    height: 8px;
+    border: 1px solid rgb(90, 87, 87);
+    position: absolute;
+    top: 0.25rem;
+    left: 1.5rem;
+    border-radius: 0px 3px 3px 0px;
+    background-color: rgb(228, 27, 27);
+}
+.noti_bar{
+    width: 96%;
+    height: 40px;
+    /* border: 0.3px solid rgb(182, 180, 180); */
+    box-shadow: white inset 1px -2px 10px -2px;
+    margin: auto;
+/* background-color: grey; */
+    border-radius: 50px;
+position: absolute;
+bottom: 0.15rem;
+left: 0;
+right: 0;
+overflow: hidden;
+}
+.slide_btn{
+    width: 50px;
+    height: 30px;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    border: 0.1px solid rgb(211, 206, 206);
+    top: 0.2rem;
+    left: 0.2rem;
+    z-index: 1;
+    background-color: rgb(241, 237, 237);
+    box-shadow: rgba(229, 224, 224, 0.916) inset 2px -2px 10px;
+animation:  slidebtn 2s linear infinite;
+}
+@keyframes slidebtn{
+    50%{
+        transform: translateX(0.8rem);
+        transition: 50s ease-in-out;
+    }
+}
+p{
+    width: 200px;
+    /* border: 1px solid; */
+    position: absolute;
+    left: 5rem;
+    font-size: 1.4rem;
+    text-align: center;
+    bottom: -1rem;
+    display: flex;
+    color: rgba(255, 255, 255, 0.576);
+    transition: all ease-in-out;
+    animation:  sliding 5s linear infinite;
+   
+}
+@keyframes sliding{
+
+    50%{
+        transform: translateX(3rem);
+    }
+}
+
+.call_icon{
+    width: 15px;
+    height: 20px;
+    background-color: rgba(0, 200, 0, 0.689);
+    border-radius: 50%;
+    transform: rotate(-50deg);
+    position: absolute;
+    left: 1rem;
+    top: 0.3rem;
+}
+.call_icon::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color: rgb(241, 237, 237);
+    border-radius: 50%;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.2rem;
+}
+.call_icon::after{
+    content: "";
+    width: 7px;
+    height: 7px;
+    background-color: rgba(0, 200, 0, 0.689);
+    border-radius: 50%;
+    position: absolute;
+    left: 0.4rem;
+    top: 0rem;
+}
+
+
+
+
+.phone_main{
+    position: absolute;
+    left: 23rem;
+    top: 7rem;
+    width: 330px;
+    height: 320px;
+    border-radius: 30px;
+    /* border: 2px solid; */
+    transform: skew(30deg)rotate(-30deg);
+    border-left: 15px solid;
+    border-bottom: 50px solid;
+    border-right: 6px solid;
+    border-top: 40px solid;
+z-index: 3;
+    border-bottom-left-radius: 35px;
+    background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+animation:  phone 5s linear forwards infinite;
+}
+@keyframes phone{
+    50%{
+      top: 3rem;
+     rotate: 5deg;
+    }
+}
+
+.phone_main::before{
+    content: "";
+    position: absolute;
+    left: -2.5rem;
+    top: -2.5rem;
+    width: 377px;
+    height: 430px;
+border-radius: 50px;
+z-index: 5;
+    box-shadow:inset rgb(41, 41, 41) 5px -5px 18px 5px;
+}
+
+.caller{
+    width: 70px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 50%;
+position: absolute;
+left: 0;
+right: 0;
+margin: auto;
+top: 4rem;
+overflow: hidden;
+}
+h2{
+    font-size: 0.9rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 3.7rem;
+    color: rgba(255, 255, 255, 0.822);
+
+}
+
+/* bodycall */
+.head{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(229, 229, 229, 0.822);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    right: 0;
+    margin: auto;
+
+}
+.bodycall{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(229, 229, 229, 0.822);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 2rem;
+    margin: auto;  
+}
+.caller_id{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 3.8rem;
+}
+
+    </style>
+</head>
+<body>
+
+
+
+  
+    <div class="phone_main">
+
+<div class="touch_btn"></div>
+<div class="camera"></div>
+<div class="top_mike"></div>
+<div class="power_btn"></div>
+<div class="bubble_1_ second"></div>
+<div class="bubble_1_ five"></div>
+<div class="bubble_1_ six"></div>
+<div class="charger"></div>
+<div class="btm_mike"></div>
+<div class="small_hole"></div>
+<!-- ///////////////////////////////screen -->
+<div class="time">
+    <h1>12: <span>02</span>
+   </h1>
+
+</div>
+<div class="caller">
+
+<div class="head"></div>
+<div class="bodycall"></div>
+</div>
+<div class="caller_id"><h2>Home <br> Mobile</h2></div>
+<div class="top_bar">
+<div class="tower_box">
+    <div class="tower_"></div>
+    <div class="tower_1"></div>
+    <div class="tower_2"></div>
+    <div class="tower_3"></div>
+</div>
+<div class="charger_box">
+    <div class="charger_1"></div>
+    <div class="charger_2"></div>
+    <div class="charger_3"></div>
+    <div class="charger_4"></div>
+
+</div>
+</div>
+
+<div class="noti_bar">
+    <div class="slide_btn">
+        <div class="call_icon"></div>
+    </div>
+    <p >slide to answer </p>
+</div>
+ 
+
+
+</div>
+
+
+</body>
+</html>
+<script>
+
+</script>
